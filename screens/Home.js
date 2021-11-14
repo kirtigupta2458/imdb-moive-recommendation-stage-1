@@ -23,53 +23,30 @@ export default class HomeScreen extends Component {
   }
 
   getMovie = () => {
-    const url = "http://localhost:5000/get-movie";
-    axios
-      .get(url)
-      .then(response => {
-        let details = response.data.data;
-        details["duration"] = this.timeConvert(details.duration);
-        this.setState({ movieDetails: details });
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+
+    
+    
   };
 
   likedMovie = () => {
-    const url = "http://localhost:5000/liked-movie";
-    axios
-      .post(url)
-      .then(response => {
-        this.getMovie();
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+   
+    
+    
+    
   };
 
   unlikedMovie = () => {
-    const url = "http://localhost:5000/unliked-movie";
-    axios
-      .post(url)
-      .then(response => {
-        this.getMovie();
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+   
+    
+    
+    
   };
 
   notWatched = () => {
-    const url = "http://localhost:5000/did-not-watch";
-    axios
-      .post(url)
-      .then(response => {
-        this.getMovie();
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+   
+    
+    
+    
   };
 
   render() {
